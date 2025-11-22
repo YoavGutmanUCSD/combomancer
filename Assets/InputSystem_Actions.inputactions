@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "InputSystem_Actions",
     "maps": [
         {
@@ -986,6 +987,54 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "New action map",
+            "id": "9d4d0a16-cd5f-488c-8c39-24b5e3dcdb9b",
+            "actions": [
+                {
+                    "name": "LeftButton",
+                    "type": "Button",
+                    "id": "161dc457-a9a2-48f4-aa20-39c6c1275161",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightButton",
+                    "type": "Button",
+                    "id": "0f96f8a9-03b6-408c-80be-7bb6dbc38456",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cd6e2ed5-7eab-44d2-b734-427c484e606d",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "LeftButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6288a631-5636-41c7-92f8-21d5e3d5e558",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "RightButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

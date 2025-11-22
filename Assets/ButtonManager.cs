@@ -16,6 +16,7 @@ public class ButtonManager : MonoBehaviour
 	bool rightHeld;
 	int ticks;
 	public List<ButtonType> pressedSequence;
+	[SerializeField] ListButtonsUI listButtonsUI;
 
     void Awake()
     {
@@ -39,18 +40,21 @@ public class ButtonManager : MonoBehaviour
 				leftHeld = true;
 				rightHeld = true;
 				pressedSequence = new List<ButtonType>();
+				listButtonsUI.DeleteAll();
 			}
 			else if (leftPressed && !leftHeld) 
 			{
 				pressedSequence.Add(ButtonType.Left);
 				Debug.Log("leftButton");
 				leftHeld = true;
+				listButtonsUI.DrawLeft();
 			} 
 			else if (rightPressed && !rightHeld) 
 			{
 				pressedSequence.Add(ButtonType.Right);
 				Debug.Log(pressedSequence.ToString());
 				rightHeld = true;
+				listButtonsUI.DrawRight();
 			}
 			else if (!leftPressed && !rightPressed)
 			{

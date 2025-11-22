@@ -1,5 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
+
+public enum ButtonType {
+	Left,
+	Right
+}
 
 public class ButtonManager : MonoBehaviour
 {
@@ -9,6 +15,7 @@ public class ButtonManager : MonoBehaviour
 	bool leftHeld;
 	bool rightHeld;
 	int ticks;
+	public List<ButtonType> pressedSequence;
 
     void Awake()
     {
@@ -17,6 +24,7 @@ public class ButtonManager : MonoBehaviour
 		leftHeld = false;
 		rightHeld = false;
 		ticks = 0;
+		pressedSequence = new List<ButtonType>();
     }
 
     // Update is called once per frame
@@ -30,17 +38,18 @@ public class ButtonManager : MonoBehaviour
 				Debug.Log("both pressed");
 				leftHeld = true;
 				rightHeld = true;
+				pressedSequence = new List<ButtonType>();
 			}
 			else if (leftPressed && !leftHeld) 
 			{
+				pressedSequence.Add(ButtonType.Left);
 				Debug.Log("leftButton");
 				leftHeld = true;
-				// rightHeld = false;
 			} 
 			else if (rightPressed && !rightHeld) 
 			{
-				Debug.Log("rightButton");
-				// leftHeld = false;
+				pressedSequence.Add(ButtonType.Right);
+				Debug.Log(pressedSequence.ToString());
 				rightHeld = true;
 			}
 			else if (!leftPressed && !rightPressed)
